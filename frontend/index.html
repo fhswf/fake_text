@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+
+<html lang="de_DE">
+
+<head>
+    <meta charset="utf8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="author" content="Christian Gawron" />
+    <meta name="description"
+        content="Diese Demo zeigt, wie man mit Hilfe von Sprachmodellen künstliche Texte erzeugen kann.">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="/style.css" />
+    <script src="textgen.js"></script>
+    <!--# include file="/head.html" -->
+    <title>Bildbeschreibung per KI</title>
+</head>
+
+<body>
+    <!--# include file="/header.html" -->
+    <!--# include file="/aside.html" -->
+    <main>
+        <a class="repository" href="https://github.com/fhswf/fake_text" title="This project on GitHub"><img
+                src="/icons/github.svg"></a>
+        <h1>Erzeugung künstlicher Texte</h1>
+        <p>
+            Kann ein Computer deutsche Texte erzeugen, ohne dass man ihm Grammatik und Rechtschreibung explizit
+            beibringt?
+            Und kommt dabei etwas heraus, das auch ein Deutschlehrer akzeptabel finden würde?
+        </p>
+        <p>
+            Tatsächlich hat das non-profit Unternehmen <a href="https://www.openai.com">OpenAI</a> im Februar 2019 ein
+            <a href="https://openai.com/blog/better-language-models/">Sprachmodell</a> vorgestellt, das genau dies
+            verspricht: Es lernt anhand riesiger Mengen von Texten eine Sprache und ist hinterher in der Lage,
+            selbständig Texte zu erzeugen.
+        </p>
+        <p>
+            Besonders beeindruckend ist dies, wenn man den Anfang des Textes vorgibt und der Computer ihn dann
+            &bdquo;weiterspinnt&ldquo;.
+        </p>
+        <p>
+            Für Deutsch gibt es leider nicht so viele frei verfügbare Trainingsdaten wie für Englisch, daher sind die
+            folgenden Textbeispiele nicht ganz so überzeugend wie die aus dem oben zitierten Beitrag von OpenAI.
+            Dafür, dass die KI sich die deutsche Grammatik anhand von Beispieltexten komplett selbst
+            &bdquo;beigrebracht&ldquo;, sind die Ergebnisse dennoch sehr gut!
+        </p>
+        <h2>Künstliche Nachrichten</h2>
+        <p>
+            Unter den folgenden Nachrichten stammt eine vom Deutschlandfunk, die anderen wurden aus der Überschrift und
+            dem ersten Satz künstlich erzeugt.
+        </p>
+        <p>Erkennen Sie das Original?</p>
+        <div class="grid start">
+            <article>
+                <h2>Heilpraktiker​ – Eine Branche auf dem Prüfstand</h2>
+                <p>
+                    Entschlackung, Akupunktur, Homöopathie: Die Behandlungsmethoden von Heilpraktikern sind umstritten,
+                    eine
+                    wissenschaftliche Ausbildung brauchen sie nicht. Das Problem dabei: Ärzte sind nicht in der Lage,
+                    die
+                    Therapien zu
+                    verstehen. "Die Ärzte sind nicht in der Lage, die Patienten zu verstehen", sagt Andreas Nehrke, der
+                    das
+                    Buch "Heilung,
+                    Heilpraktiker, Akupunktur und Homöopathie" herausgibt.
+                </p>
+            </article>
+            <article>
+                <h2>Heilpraktiker​ – Eine Branche auf dem Prüfstand</h2>
+                <p>
+                    Entschlackung, Akupunktur, Homöopathie: Die Behandlungsmethoden von Heilpraktikern sind umstritten,
+                    eine
+                    wissenschaftliche Ausbildung brauchen sie nicht. Experten kritisieren das. Und auch die
+                    Bundesregierung
+                    will das
+                    Betätigungsfeld der Heilpraktiker überprüfen.
+                </p>
+            </article>
+            <article>
+                <h2>Heilpraktiker​ – Eine Branche auf dem Prüfstand</h2>
+                <p>
+                    Entschlackung, Akupunktur, Homöopathie: Die Behandlungsmethoden von Heilpraktikern sind umstritten,
+                    eine
+                    wissenschaftliche Ausbildung brauchen sie nicht. Der Streit um Heilpraktiker ist ein Kampf ums
+                    nackte
+                    Überleben, der in der Wissenschaft noch ausgefochten wird. Die
+                    Pharmakonzerne weigern sich, die Patienten über Therapien aufzuklären, und weigern sich, sie zu
+                    informieren.
+                </p>
+            </article>
+            <article>
+                <h2>Heilpraktiker​ – Eine Branche auf dem Prüfstand</h2>
+                <p>
+                    Entschlackung, Akupunktur, Homöopathie: Die Behandlungsmethoden von Heilpraktikern sind umstritten,
+                    eine
+                    wissenschaftliche Ausbildung brauchen sie nicht.
+                    Der Medizinethiker und Homöopath Martin Gumbel fordert, dass die Krankenkassen den Homöopath auf
+                    ihre
+                    Leistungsfähigkeit
+                    überprüfen. Der Mediziner fordert, die Patienten zu informieren. Gumbel fordert: "Der
+                    Homöopath muss
+                    in der ärztlichen Praxis sein Wissen über die Wirksamkeit von Therapien offenlegen."
+                </p>
+            </article>
+        </div>
+        <h2>Fake-Texte selber machen</h2>
+        <p>Neugierig geworden, wie gut das wirklich funktioniert? Probieren Sie es aus!</p>
+        <form id="upload" enctype="multipart/form-data" action="javascript:submit()">
+            <div>
+                <textarea id="story" placeholder="Gib den Anfang der Textes hier vor ..." rows="5" cols="40"></textarea>
+            </div>
+            <input type="submit" value="Text fortsetzen" />
+        </form>
+        <div class="grid start" hidden="true" id="answers">
+        </div>
+
+    </main>
+    <!--# include file="/footer.html" -->
+</body>
+
+</html>

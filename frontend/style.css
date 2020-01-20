@@ -1,0 +1,21 @@
+main {
+    position: relative;
+}
+
+.repository {
+    position: absolute;
+    top: 1em;
+    right: 1em;
+}
+
+.repository img {
+    height: 24px;
+}
+
+div.start {
+    align-items: start;
+}
+
+#story {
+    witdh: 100%;
+}
